@@ -1,4 +1,4 @@
-package org.zerock.mapper;
+package org.donghyun.mapper;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;

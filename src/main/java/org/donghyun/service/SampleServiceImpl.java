@@ -1,8 +1,8 @@
-package org.zerock.service;
+package org.donghyun.service;
 
+import org.donghyun.mapper.SampleMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.zerock.mapper.SampleMapper;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j;

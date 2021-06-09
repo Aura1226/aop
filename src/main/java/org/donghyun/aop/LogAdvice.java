@@ -1,4 +1,4 @@
-package org.zerock.aop;
+package org.donghyun.aop;
 
 import java.util.Arrays;
 
@@ -16,12 +16,12 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class LogAdvice {
 
-	@Before(value = "execution(* org.zerock..*.*Service*.*(..))") //이번에만 손으로 쳐라...다음엔 복붙  
+	@Before(value = "execution(* org.donghyun..*.*Service*.*(..))") //이번에만 손으로 쳐라...다음엔 복붙  
 	public void logBefore() { //doA만 걸어주고 싶다면 마지막 *부분에 doA(메서드)를... 오전 11시 5분
 		log.info("----------------------");
 	}
 	
-	@Before(value = "execution(* org.zerock..*.*Controller*.*(..))") //Controller에선 Around쓰면 안된다. 리스크가 크다.
+	@Before(value = "execution(* org.donghyun..*.*Controller*.*(..))") //Controller에선 Around쓰면 안된다. 리스크가 크다.
 	public void logBeforeController(JoinPoint jp) { 
 		log.info("----------------------");
 		String methodName = jp.getSignature().getName();
@@ -31,7 +31,7 @@ public class LogAdvice {
 		log.info(Arrays.toString(args));
 	}
 	
-	//@Around(value = "execution(* org.zerock..*.*Service*.*(..))")//Service에선 Around를 써도 된다
+	//@Around(value = "execution(* org.donghyun..*.*Service*.*(..))")//Service에선 Around를 써도 된다
 	public Object logTime(ProceedingJoinPoint pjp) throws Throwable{//ProceedingJoinPoint @Around에서만 쓸 수 있다.
 		
 		String methodName = pjp.getSignature().getName();
